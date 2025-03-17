@@ -38,10 +38,10 @@ class Joueur{
     }
 
     // constructeur
-    public function __construct($nom, $prenom, $dateDeNaissance, Pays $pays){
+    public function __construct($nom, $prenom, string $dateDeNaissance, Pays $pays){
         $this->nom = $nom;
         $this->prenom = $prenom;
-        $this->dateDeNaissance = $dateDeNaissance;
+        $this->dateDeNaissance = new DateTime($dateDeNaissance);
         $this->pays = $pays;
         $pays->ajouterJoueur($this);
     }
@@ -62,10 +62,9 @@ class Joueur{
         echo $this->getPrenom()." ".$this->getNom()."<br>
             <small>".$this->getPays()->getNom()." - ".$this->calculerAge()." ans</small></br>";
         foreach($this->transferts as $transfert){
-            echo $transfert->getEquipe()->getNom()." - "
+            echo "->".$transfert->getEquipe()->getNom()." - "
                 .$transfert->getDateDeDebut()." - ".$transfert->getDateDeFin()."<br>";
         }
         echo "****************<br>";
-        
     }
 }

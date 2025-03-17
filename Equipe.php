@@ -53,7 +53,8 @@ class Equipe{
         echo "Joueur étant passé par ".$this->getNom()."<br>".
                "<small>".$this->getPays()->getNom()." - ".$this->getAnneeCreation()."</small><br>";
         foreach($this->getTransferts() as $transfert){
-            echo $transfert->getJoueur()->getPrenom()." ".$transfert->getJoueur()->getNom()."<br>";
+            echo "->".$transfert->getJoueur()->getPrenom()." ".$transfert->getJoueur()->getNom().
+                    " (".$transfert->getDateDeDebut()." - ".$transfert->getDateDeFin().")<br>";
         }
         echo "****************<br>";
     }
