@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clrWhite{
+    color: white !important;
+}
+
+.red{
+    background-color: #bc6665;
+}
+
+.blue{
+    background-color: #6783b3 !important;
+}
+
+.green{
+    background-color: #6aaf5c !important;
+    
+}
+
+.container{
+    padding: 20px 20px;
+    color: white;
+
+}
+.startBottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+p{
+    margin: 0;
+}
+

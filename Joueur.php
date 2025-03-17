@@ -22,6 +22,9 @@ class Joueur{
     public function getPays(){
         return $this->pays;
     }
+    public function getTransferts(){
+        return $this->transferts;
+    }
 
     // Mutateurs
     public function setNom($nom){
@@ -36,6 +39,10 @@ class Joueur{
     public function setPays($pays){
         $this->pays = $pays;
     }
+    public function setTransferts($transferts){
+        $this->transferts = $transferts;
+    }
+
 
     // constructeur
     public function __construct($nom, $prenom, string $dateDeNaissance, Pays $pays){

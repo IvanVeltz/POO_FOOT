@@ -32,6 +32,7 @@ class Pays{
     // Constructeur
     public function __construct($nom){
         $this->nom = $nom;
+        $toutPays[] = $this;
     }
 
     // Methodes
@@ -43,19 +44,4 @@ class Pays{
         $this->joueurs[] = $joueur;
     }
 
-    public function afficherEquipes(){
-        echo "Liste des equipes en $this->nom<br>";
-        foreach($this->getEquipes() as $equipe){
-            echo "->".$equipe->getNom()."<br>";
-        }
-        echo "****************<br>";
-    }
-
-    public function afficherJoueurs(){
-        echo "Liste des joueurs en $this->nom<br>";
-        foreach($this->getJoueurs() as $joueur){
-            echo "->".$joueur->getPrenom()." ".$joueur->getNom()."<br>";
-        }
-        echo "****************<br>";
-    }
 }
