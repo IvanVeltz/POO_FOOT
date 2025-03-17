@@ -40,11 +40,11 @@ class Transfert{
     // Constructeur
     public function __construct(Joueur $joueur, Equipe $equipe, $dateDeDebut, $dateDeFin){
         $this->joueur = $joueur;
-        $this->equipê = $equipe;
-        $this->dateDebut = $dateDeDebut;
-        $this->dateFin = $dateDeFin;
-        $joueur->transfert[] = $this;
-        $equipe->transfert[] = $this;
+        $this->equipe = $equipe;
+        $this->dateDeDebut = $dateDeDebut;
+        $this->dateDeFin = $dateDeFin;
+        $joueur->ajouterTransfert($this);
+        $equipe->ajouterTransfert($this);
     }
 }
 

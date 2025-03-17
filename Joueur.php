@@ -16,7 +16,7 @@ class Joueur{
     public function getPrenom(){
         return $this->prenom;
     }
-    public function dateDeNaissance(){
+    public function getDateDeNaissance(){
         return $this->dateDeNaissance;
     }
     public function getPays(){
@@ -43,6 +43,29 @@ class Joueur{
         $this->prenom = $prenom;
         $this->dateDeNaissance = $dateDeNaissance;
         $this->pays = $pays;
-        $pays->joueur[] = $this;
+        $pays->ajouterJoueur($this);
+    }
+
+    // Méthodes
+    public function ajouterTransfert($transfert){
+        $this->transferts[] = $transfert;
+    }
+
+    public function calculerAge(){
+        $dateDeNaissance = $this->getDateDeNaissance();
+        $aujourdhui = new DateTime(date("Y-m-d"));
+        $age = $dateDeNaissance->diff($aujourdhui);
+        return $age->format('%y');
+    }
+
+    public function afficherEquipes(){
+        echo $this->getPrenom()." ".$this->getNom()."<br>
+            <small>".$this->getPays()->getNom()." - ".$this->calculerAge()." ans</small></br>";
+        foreach($this->transferts as $transfert){
+            echo $transfert->getEquipe()->getNom()." - "
+                .$transfert->getDateDeDebut()." - ".$transfert->getDateDeFin()."<br>";
+        }
+        echo "****************<br>";
+        
     }
 }
