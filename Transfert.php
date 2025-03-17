@@ -1,6 +1,6 @@
 <?php
 
-class Transfert(){
+class Transfert{
 
     // Attributs
 
@@ -43,9 +43,8 @@ class Transfert(){
         $this->equipê = $equipe;
         $this->dateDebut = $dateDeDebut;
         $this->dateFin = $dateDeFin;
-        array_push($joueur->transfert, $this);
-        array_push($equipe->transfert, $this);
+        $joueur->transfert[] = $this;
+        $equipe->transfert[] = $this;
     }
-
 }
 

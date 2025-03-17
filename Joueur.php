@@ -40,9 +40,9 @@ class Joueur{
     // constructeur
     public function __construct($nom, $prenom, $dateDeNaissance, Pays $pays){
         $this->nom = $nom;
-        $this->prenom = $prenom
+        $this->prenom = $prenom;
         $this->dateDeNaissance = $dateDeNaissance;
         $this->pays = $pays;
-        array_push($pays->joueur, $this);
+        $pays->joueur[] = $this;
     }
 }
