@@ -67,7 +67,7 @@ $transfertBarcolaPSG = new Transfert($barcola, $psg, 2024, 2025);
 </div>
 
 <!-- Afficher les clubs avec leurs joueurs -->
-<div class=" uk-child-width-1-6@m uk-grid-small uk-grid-match uk-grid">
+<div class=" uk-child-width-1-6@m uk-grid-medium uk-grid-match uk-grid">
     <?php
         foreach($equipes as $equipe){
     ?>
