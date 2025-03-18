@@ -53,11 +53,13 @@ $transfertBarcolaPSG = new Transfert($barcola, $psg, 2024, 2025);
     <div>
         <div class="container red uk-card uk-card-default uk-card-body uk-width-medium">
                 <h3 class="clrWhite uk-card-title"><?php echo($pays->getNom()) ?></h3>
+                <div>
                 <?php 
                     foreach($pays->getEquipes() as $equipe){
                         echo "<p>".$equipe->getNom()."</p>";
                     }
                 ?>
+                </div>
         </div>
 
     </div>
@@ -67,21 +69,24 @@ $transfertBarcolaPSG = new Transfert($barcola, $psg, 2024, 2025);
 </div>
 
 <!-- Afficher les clubs avec leurs joueurs -->
-<div class=" uk-child-width-1-6@m uk-grid-medium uk-grid-match uk-grid">
+<div class=" uk-child-width-1-6@m uk-grid-small uk-grid-match uk-grid">
     <?php
         foreach($equipes as $equipe){
     ?>
     <div>
         <div class="container blue uk-card uk-card-default uk-card-body uk-width-medium">
+            <div>
                 <h3 class="clrWhite uk-card-title"><?php echo($equipe->getNom()) ?></h3>
-                <div class="startBottom">
+                <small><?php echo $equipe->getPays()->getNom()." - ".$equipe->getAnneeCreation()." ans"?></small>
+            </div>
+            <div>
                 <?php 
                     foreach($equipe->getTransferts() as $transfert){
                         echo "<p>".$transfert->getJoueur()->getPrenom()." ".$transfert->getJoueur()->getNom().
                         " (".$transfert->getDateDeDebut()." - ".$transfert->getDateDeFin().")</p>";
                     }
                 ?>
-                </div>
+            </div>
         </div>
 
     </div>
@@ -97,13 +102,18 @@ $transfertBarcolaPSG = new Transfert($barcola, $psg, 2024, 2025);
     ?>
     <div>
         <div class="container green uk-card uk-card-default uk-card-body uk-width-medium">
-                <h3 class="clrWhite uk-card-title"><?php echo $joueur->getPrenom()." ".$joueur->getNom() ?></h3>
+                <div>
+                    <h3 class="clrWhite uk-card-title"><?php echo $joueur->getPrenom()." ".$joueur->getNom() ?></h3>
+                    <small><?php echo $joueur->getPays()->getNom()." - ".$joueur->calculerAge()." ans"?></small>
+                </div>
+                <div>
                 <?php 
                     foreach($joueur->getTransferts() as $transfert){
                         echo "<p>".$transfert->getEquipe()->getNom().
                         " (".$transfert->getDateDeDebut()." - ".$transfert->getDateDeFin().")</p>";
                     }
                 ?>
+                </div>
         </div>
 
     </div>
